@@ -46,6 +46,7 @@ function LoginComponent() {
         <div className="Login">
            
             <div className="LoginForm">
+            
                 <div>
                     <label>User Name:</label>
                     <input type="text" name="username" value={username} onChange={handleUsernameChange}/>
@@ -57,29 +58,32 @@ function LoginComponent() {
                 <div>
                     <button type="button" name="login" onClick={handleSubmit}>login</button>
                 </div>
-                <SuccessMessageComponent />
-                <ErrorMessageComponent />
+                {showSuccessMessage && <div className="successMessage">Authenticated Successfully</div>}
+                {/* <SuccessMessageComponent /> */}
+                {showErrorMessage && <div className="errorMessage">Authentication Failed. 
+                                                Please check your credentials.</div>}
+                {/* <ErrorMessageComponent /> */}
             </div>
         </div>
     )
 
-    function SuccessMessageComponent() {
+    // function SuccessMessageComponent() {
 
-        if(showSuccessMessage) {
-            return <div className="successMessage">Authenticated Successfully</div>
-        }
+    //     if(showSuccessMessage) {
+    //         return <div className="successMessage">Authenticated Successfully</div>
+    //     }
         
-        return null   
-    }
+    //     return null   
+    // }
     
-    function ErrorMessageComponent() {
+    // function ErrorMessageComponent() {
     
-        if(showErrorMessage) {
-            return <div className="errorMessage">Authentication Failed. Please check your credentials.</div>
-        }
+    //     if(showErrorMessage) {
+    //         return <div className="errorMessage">Authentication Failed. Please check your credentials.</div>
+    //     }
         
-        return null   
-    }
+    //     return null   
+    // }
 }
 
 

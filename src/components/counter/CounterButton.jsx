@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {PropTypes} from 'prop-types'
 export default function CounterButton({by,incrementMethod,decrementMethod}) {    
 
@@ -7,20 +6,21 @@ export default function CounterButton({by,incrementMethod,decrementMethod}) {
     //const [firstElt, secondElt] = array
     //const [count, setCount] = array
     // useState() returns an array back
-    const [count, setCount] = useState(0)
+    // Remove the state
+    // const [count, setCount] = useState(0)
 
     // console.log(by);
 
-    function incrementCounterFunction() {
-        setCount(count + by)
-        incrementMethod(by);
-    }
+    // function incrementCounterFunction() {
+    //     // setCount(count + by)
+    //     incrementMethod(by);
+    // }
 
-    function decrementCounterFunction() {
-        setCount(count - by)
-        decrementMethod(by);
+    // function decrementCounterFunction() {
+    //     // setCount(count - by)
+    //     decrementMethod(by);
         
-    }
+    // }
 
     return (
         <div className="Counter">
@@ -28,10 +28,10 @@ export default function CounterButton({by,incrementMethod,decrementMethod}) {
             {/* <span className="count">{count}</span> */}
             <div>
                 <button className="counterButton" 
-                        onClick={incrementCounterFunction}
+                        onClick={()=>incrementMethod(by)}
                 >+{by}</button>
                 <button className="counterButton" 
-                        onClick={decrementCounterFunction}
+                        onClick={()=>decrementMethod(by)}
                 >-{by}</button>
  
             </div>

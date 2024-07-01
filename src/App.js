@@ -9,12 +9,14 @@
 // import FourthComponent from './components/learning-examples/FourthComponent'
 
 import './App.css';
-import Counter from './components/counter/Counter'
+// import Counter from './components/counter/Counter'
+import TodoApp from './components/todo/TodoApp';
 
 function App() {
   return (
     <div className="App">
-      <Counter/>
+      <TodoApp />
+      {/* <Counter/> */}
       {/* <CounterButton by={1}/>
       <CounterButton by={2}/>
       <CounterButton by={5}/> */}

@@ -14,9 +14,10 @@ import Counter from './components/counter/Counter'
 function App() {
   return (
     <div className="App">
-      <Counter by={1}/>
-      <Counter by={2}/>
-      <Counter by={5}/>
+      <Counter/>
+      {/* <CounterButton by={1}/>
+      <CounterButton by={2}/>
+      <CounterButton by={5}/> */}
       {/* <PlayingWithProps property1= "value1" property2= "value2"/> */}
     </div>
   )

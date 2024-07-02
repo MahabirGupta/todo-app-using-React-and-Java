@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route, useNavigate, useParams, Link} from 'react-
 export default function TodoApp() {
     return (
         <div className="TodoApp">
+            <HeaderComponent />
     <BrowserRouter>
     <Routes>
         <Route path='/' element={ <LoginComponent /> }></Route>
@@ -11,10 +12,13 @@ export default function TodoApp() {
         <Route path='/welcome/:username' element={<WelcomeComponent /> }></Route>
         <Route path='/todos' element={<ListTodosComponent /> } />
         <Route path='*' element={<ErrorComponent /> }></Route>
+        <Route path='/logout' element={<LogoutComponent /> } />
     </Routes>
     </BrowserRouter>
             {/* <LoginComponent />
             <WelcomeComponent /> */}
+            
+            <FooterComponent />
         </div>
     )
 }
@@ -172,4 +176,32 @@ function ListTodosComponent() {
                         </div>
                     </div>
                 )
+}
+
+function HeaderComponent() {
+    return (
+        <div className="header">
+            Header <hr/>
+            {/* hr is a horinzontal rule which is just a horizontal line */}
+        </div>
+    )
+}
+
+function FooterComponent() {
+    return (
+        <div className="footer">
+            <hr/> Footer 
+        </div>
+    )
+}
+
+function LogoutComponent() {
+    return (
+        <div className="LogoutComponent">
+            <h1>You are logged out!</h1>
+            <div>
+                Thank you for using our App. Come back soon!
+            </div>
+        </div>
+    )
 }
